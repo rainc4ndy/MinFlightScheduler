@@ -12,7 +12,7 @@ Idea and author: **Blume** [https://blog.yamero.cc/](https://blog.yamero.cc/)
 给出某时刻所有无人机的坐标，求所有无人机都飞到停靠站停靠的总飞行距离总和是多少?
 
 
-![illustration](resource/1.png)
+![illustration](resource/16ba63241543977c4823d85904d826d.png)
 
 
 ## 解析

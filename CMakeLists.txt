@@ -12,11 +12,11 @@ file(GLOB_RECURSE SRC_FILES
         "appicon.rc"
 )
 set(CMAKE_BUILD_TYPE Release)
-set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG -s")
+set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG -s --static")
 
 add_executable(droneUI ${SRC_FILES})
 if (WIN32)
-    set_target_properties(droneUI PROPERTIES WIN32_EXECUTABLE TRUE)
+    #set_target_properties(droneUI PROPERTIES WIN32_EXECUTABLE TRUE)
     set_target_properties(droneUI PROPERTIES
             RESOURCE "${CMAKE_CURRENT_SOURCE_DIR}/appicon.rc"
     )
@@ -30,6 +30,7 @@ target_link_libraries(droneUI PUBLIC
         imgui
         glfw
         opengl32
+        glu32
 )
 
 set_target_properties(droneUI PROPERTIES

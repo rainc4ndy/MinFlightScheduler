@@ -8,6 +8,7 @@
 
 #include "CAlgorithm.h"
 #include "CTestcase.h"
+#include "CBackground.h"
 #include "HueCycler.h"
 #include "GLFW/glfw3.h"
 
@@ -47,12 +48,17 @@ private:
     bool inited;
     bool quit;
     int active_room_view_id;
+    float font_size;
+    float point_size;
+    int hue_speed;
+    bool hue_reversed;
 
     GLFWwindow* glfw_window;
-    ImFont *regularFont, *largeFont;
+    ImFont *regularFont, *largeFont, *awesomeFont;
 
     HueCycler hue_cycler;
     CAlgorithm algorithm;
+    CBackground background;
     std::vector<CompletedTask> completed;
     std::vector<PendingTask> tasks;
 
@@ -61,6 +67,9 @@ private:
     void submitTestcase(int id);
 
     void import_test_cases();
+
+    void load_config();
+    void save_config();
 };
 
 
